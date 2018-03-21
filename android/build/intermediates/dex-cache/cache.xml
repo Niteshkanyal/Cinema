@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_598a1067d77861535a07b51fe3a7c9cc823a364d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_f0267b06e1c277341de7d92ba1c7ee06f5c855ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_ba0105b8610c1219ec7207b0f10343e866a6aacd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_05d1ce35f93e9d9e3ccee48bf559303b2a3d2620.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_a2c4e80f7964973e7692f9915d74d7a452c5e66d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_c8b70d46bf06b8998d8ee4e6d8e080469c9f90d2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_8f5ffb068242b81332e1a9aed27ed217ef489d9e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_5aaae5773981984c060e3129a22cd553c41ac665.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_336fa7625d50e0b6cbc71432748b7cfa8b62a40e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_cfe16cdf2b591f11d9eecd480b3e5c07e085a11d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_0e1526b6f796c1e2c5842f8965d3502821958828.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_a5dd267bf8004bfc3209e51e1120a43f75edff5a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="112e6935caed6ca1c65d627777c76f0296f62867">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.54.2_7584120f7a6f103b675fc53533e282fd299aec53.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.54.2/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_094201ffe0ba663307dca12dbd9b3bc8bc90217c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_f57c1a831c439c597cf454c93c7fc419fd768f35.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_679bb7d8452cb9646c59bec2fb86314f64d515a8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_40e1a84c2cf2f8260c89840b939f19fa30937c3a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_2c54d09a9b2aab9bf26490ee0cc3dca9561bd726.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.1_c3f794d5313ca745ae956dd1368fa637922032b6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_b853398ffccc39d6fb199dfc8029d44a29ea5304.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/Cinema/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="279750fed3c920d06351dbf32889c1b48203c7ad">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/Cinema-react-native-vector-icons-unspecified_e41119df2c4b06c16e70668020317d59547c2685.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_57f36e4ae13034f1761b8b5ac2992c4f4b6b7213.jar" />
+    </item>
+
+</items>
