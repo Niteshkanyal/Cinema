@@ -20,17 +20,17 @@ import Icon from 'react-native-vector-icons/FontAwesome'
  import SideBarMenu from './SideBarMenu.js'
 
 
-import Nowplaying from './tabs/Nowplaying.js'
-import Topboxoffice from './tabs/Topboxoffice.js'
-import Anticipated from './tabs/Anticipated.js'
-import Upcoming from './tabs/Upcoming.js'
-import Trending from './tabs/Trending.js'
-import Imdbtop250 from './tabs/Imdbtop250.js'
-import Toprated from './tabs/Toprated.js'
-import Upcomingdvds from './tabs/Upcomingdvds.js'
-import Newdvds from './tabs/Newdvds.js'
-import Onnetflix from './tabs/Onnetflix.js'
-import Toprentals from './tabs/Toprentals.js'
+import Nowplaying from './Movie_tabs/Nowplaying.js'
+import Topboxoffice from './Movie_tabs/Topboxoffice.js'
+import Anticipated from './Movie_tabs/Anticipated.js'
+import Upcoming from './Movie_tabs/Upcoming.js'
+import Trending from './Movie_tabs/Trending.js'
+import Imdbtop250 from './Movie_tabs/Imdbtop250.js'
+import Toprated from './Movie_tabs/Toprated.js'
+import Upcomingdvds from './Movie_tabs/Upcomingdvds.js'
+import Newdvds from './Movie_tabs/Newdvds.js'
+import Onnetflix from './Movie_tabs/Onnetflix.js'
+import Toprentals from './Movie_tabs/Toprentals.js'
 
 export default class Demo extends Component{
   constructor() {
@@ -43,6 +43,7 @@ export default class Demo extends Component{
 
     openDrawer() {
         this.drawer.openDrawer();
+        // this.drawer.closeDrawer();
     }
 
   render() {
@@ -53,13 +54,13 @@ export default class Demo extends Component{
                drawerPosition={DrawerLayoutAndroid.positions.Left}
                renderNavigationView={() => <SideBarMenu/>}>
                <View style={{flex: 1,flexDirection:'column', alignItems: 'center'}}>
-                  <View style={{flex:0.1,flexDirection:'row',backgroundColor:'#2d2f31'}}>
+                  <View style={{flex:0.1,flexDirection:'row',backgroundColor:'#333333'}}>
                     <View style={{flex:0.06}}></View>
                     <View style={{flex:0.09}}>
                       <Icon name='bars' style={{color:'white', fontSize:24,marginTop:height*0.029}} onPress={this.openDrawer}/>
                     </View>
                     <View style={{flex:0.03}}></View>
-                    <View style={{flex:0.52}}><Text style={{fontSize:width*0.052,color:'white',padding:15}}>Cinematics</Text></View>
+                    <View style={{flex:0.52}}><Text style={{fontSize:width*0.052,color:'#f7faff',padding:15}}>Cinematics</Text></View>
                     <View style={{flex:0.05}}></View>
                     <View style={{flex:0.1}}>
                       <TouchableOpacity onPress={()=>{ this.setState({listflip:!this.state.listflip})}}>
@@ -75,9 +76,9 @@ export default class Demo extends Component{
                   <View style={{flex:0.9,flexDirection:'column'}}>
                     <View style={{flex:1}}>
                         <ScrollableTabView
-                          tabBarBackgroundColor="#333435"
-                          tabBarActiveTextColor="#fff"
-                          tabBarInactiveTextColor="#BDC3C7"
+                          tabBarBackgroundColor="#333333"
+                          tabBarActiveTextColor="#f7faff"
+                          tabBarInactiveTextColor="#c1c1c1"
                           tabBarTextStyle={{ fontFamily: 'Roboto', fontSize:width*0.0358 }}
                           tabBarUnderlineStyle={{ backgroundColor: '#3FC380' }}
                           renderTabBar={() => <ScrollableTabBar />}>

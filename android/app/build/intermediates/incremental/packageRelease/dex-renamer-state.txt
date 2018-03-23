@@ -1,4 +1,4 @@
-#Tue Mar 20 17:56:50 IST 2018
+#Fri Mar 23 15:30:31 IST 2018
 base.0=/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/Users/nitesh.kanyal/Desktop/native_react/Cinema/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex

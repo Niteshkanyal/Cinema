@@ -20,59 +20,63 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 
 export default class Info_detail extends Component{
+
   state = {
-     head:[],
   }
   async componentDidMount()
   {
-         let response = await AsyncStorage.getItem('head');
-         let listOfTasks = await JSON.parse(response) || [];
-         this.setState({head:listOfTasks});
 
+         // alert(JSON.stringify(this.props.dataSource))
   }
   render() {
     return (
-      <View style={{flex:1,flexDirection:'column'}}>
+      <View style={{flex:1,flexDirection:'column',backgroundColor:'#f7faff'}}>
         <ScrollView>
         <View style={{flex:0.1,marginTop:height*0.02}}></View>
-        <View style={{flex:0.2,flexDirection:'row'}}>
+        <View style={{flex:0.24,flexDirection:'row'}}>
           <View style={{flex:0.05}}></View>
           <View style={{flex:0.12}}>
-            <Icon name='star' style={{color:'black', fontSize:37,marginTop:height*0.007,marginLeft:width*0.03}}/>
+            <Icon name='star' style={{color:'#b6e5d9', fontSize:35,marginTop:height*0.007,marginLeft:width*0.02}}/>
+            <Text style={{color:'black',textAlign:'center',fontWeight:'bold'}}>Rate</Text>
           </View>
           <View style={{flex:0.036}}></View>
           <View style={{flex:0.12}}>
-            <Image source={require('../Images/thdb.png')} style={{height:height*0.065,width:width*0.12,resizeMode:'stretch'}}/>
+            <Image source={require('../Images/tmdb1.png')} style={{height:height*0.062,width:width*0.11,resizeMode:'stretch'}}/>
+            <Text style={{fontSize:13,color:'black',textAlign:'center',fontWeight:'bold'}}>{this.props.dataSource.vote_average}</Text>
           </View>
           <View style={{flex:0.036}}></View>
           <View style={{flex:0.12}}>
-              <Image source={require('../Images/imdb.png')}style={{height:height*0.065,width:width*0.12,resizeMode:'stretch'}}/>
+              <Image source={require('../Images/imdb.png')}style={{height:height*0.062,width:width*0.11,resizeMode:'stretch'}}/>
+              <Text style={{fontSize:13,color:'black',textAlign:'center',fontWeight:'bold'}}>7.8</Text>
           </View>
-          <View style={{flex:0.036}}></View>
+          <View style={{flex:0.043}}></View>
+          <View style={{flex:0.116}}>
+              <Image source={require('../Images/apple.png')}style={{height:height*0.062,width:width*0.11,resizeMode:'stretch'}}/>
+              <Text style={{fontSize:13,color:'black',textAlign:'center',fontWeight:'bold'}}>76%</Text>
+          </View>
+          <View style={{flex:0.033}}></View>
           <View style={{flex:0.12}}>
-              <Image source={require('../Images/apple.png')}style={{height:height*0.065,width:width*0.12,resizeMode:'stretch'}}/>
+              <Image source={require('../Images/popcorn.jpeg')}style={{height:height*0.063,width:width*0.12,resizeMode:'stretch'}}/>
+              <Text style={{fontSize:13,color:'black',textAlign:'center',fontWeight:'bold'}}>82%</Text>
           </View>
           <View style={{flex:0.036}}></View>
-          <View style={{flex:0.12}}>
-              <Image source={require('../Images/popcorn.jpeg')}style={{height:height*0.065,width:width*0.12,resizeMode:'stretch'}}/>
-          </View>
-          <View style={{flex:0.036}}></View>
-          <View style={{flex:0.12,backgroundColor:'#66cc33'}}>
+          <View style={{flex:0.12,backgroundColor:'#66cc33',height:height*0.069,alignItems:'center'}}>
+            <Text style={{color:'white',fontSize:14,padding:height*0.016}}>66</Text>
           </View>
           <View style={{flex:0.05}}></View>
         </View>
         <View style={{flex:0.2}}></View>
         <View style={{flex:0.5,flexDirection:'column'}}>
-          <View style={{flex:0.3}}><Text style={{fontSize:width*0.035,color:'black',padding:width*0.05}}>{this.state.head.overview}</Text></View>
-          <View style={{flex:0.1}}></View>
-          <View style={{flex:0.2}}>
-            <Text>Release Date:{this.state.head.release_date}</Text>
-            <Text>DVD Release Date:{this.state.head.budget}</Text>
-            <Text>Directed By:{this.state.head.revenue}</Text>
-            <Text>Budget:{}</Text>
-            <Text>Revenue:{}</Text>
+          <View style={{flex:0.3,marginLeft:width*0.044,marginTop:height*0.045,marginRight:width*0.02}}><Text style={{fontSize:width*0.035,color:'#010100'}}>{this.props.dataSource.overview}</Text></View>
+          <View style={{flex:0.05}}></View>
+          <View style={{flex:0.25,padding:20}}>
+            <Text style={{padding:2}}><Text style={{color:'black',fontWeight:'bold'}}>Release Date: </Text>{this.props.dataSource.release_date}</Text>
+            <Text style={{padding:2}}><Text style={{color:'black',fontWeight:'bold'}}>DVD Release Date: </Text>N/A</Text>
+            <Text style={{padding:2}}><Text style={{color:'black',fontWeight:'bold'}}>Directed By: </Text>{this.props.dataSource.revenue}</Text>
+            <Text style={{padding:2}}><Text style={{color:'black',fontWeight:'bold'}}>Budget: </Text>${this.props.dataSource.budget}</Text>
+            <Text style={{padding:2}}><Text style={{color:'black',fontWeight:'bold'}}>Revenue: </Text>${this.props.dataSource.revenue}</Text>
           </View>
-          <View style={{flex:0.7}}><Text style={{fontSize:width*0.035,color:'black',padding:width*0.05}}>{this.state.head.overview}</Text></View>
+          <View style={{flex:0.7}}></View>
         </View>
         </ScrollView>
       </View>
