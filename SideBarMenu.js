@@ -40,7 +40,7 @@ render() {
               <View style={{flex:0.13}}></View>
               <View style={{flex:0.72}}>
                 <TouchableOpacity onPress = { () => { Actions.Moviesview()}}>
-                <Text style={{color:'gray',fontSize:17}} >Movies</Text>
+                  <Text style={{color:'gray',fontSize:17}} >Movies</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -52,7 +52,7 @@ render() {
             <View style={{flex:0.13}}></View>
             <View style={{flex:0.72}}>
               <TouchableOpacity onPress = { () => { Actions.TVviews()}}>
-              <Text style={{color:'gray',fontSize:17}}>TV Shows</Text>
+                <Text style={{color:'gray',fontSize:17}}>TV Shows</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -61,7 +61,9 @@ render() {
             <View style={{flex:0.1}}><Icon name='search' style={{color:'#00984f', fontSize:25}}/></View>
             <View style={{flex:0.13}}></View>
             <View style={{flex:0.72}}>
-              <Text style={{color:'gray',fontSize:17}} >Discover</Text>
+              <TouchableOpacity onPress = { () => { Actions.Discover()}}>
+                <Text style={{color:'gray',fontSize:17}} >Discover</Text>
+              </TouchableOpacity>
             </View>
           </View>
           <View style={{flex:0.1,flexDirection:"row",marginTop:height*0.01}}>
@@ -120,18 +122,3 @@ render() {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-
-});

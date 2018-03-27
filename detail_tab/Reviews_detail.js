@@ -22,7 +22,7 @@ export default class Reviews_detail extends Component{
   state = {
      reviews_movie:[],
       isLoading: true,
-
+      noitem:'NO DATA',
   }
 
   async componentDidMount()
@@ -41,7 +41,6 @@ export default class Reviews_detail extends Component{
              }, function(err,data){
 
                    this.setState({isLoading:false});
-                   // alert(JSON.stringify(this.state.reviews_movie))
              });
 
            })
@@ -66,8 +65,8 @@ export default class Reviews_detail extends Component{
         data={this.state.reviews_movie.results}
         keyExtractor={(x, i) => i}
         renderItem={({item}) =>
-          <View style={{flexDirection:'column',marginTop:height*0.02}}>
-            <Text style={{fontSize:15,fontWeight:'bold',padding:5}}>{item.author}</Text>
+          <View style={{flexDirection:'column',marginTop:height*0.01,padding:width*0.05}}>
+            <Text style={{fontSize:15,fontWeight:'bold',padding:5}}>{item.author?item.author:this.state.noitem}</Text>
             <Text style={{padding:5}}>{item.content}</Text>
           </View>
 
@@ -77,18 +76,3 @@ export default class Reviews_detail extends Component{
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-
-});

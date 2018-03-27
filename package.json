@@ -7,9 +7,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "lodash": "^4.17.5",
     "react": "16.3.0-alpha.2",
     "react-native": "0.54.2",
+    "react-native-animated-modal": "^1.1.0",
+    "react-native-blur": "^3.2.2",
+    "react-native-image-progress": "^1.1.0",
     "react-native-image-slider": "^2.0.3",
+    "react-native-keyboard-aware-scroll-view": "^0.5.0",
+    "react-native-progress": "^3.4.0",
     "react-native-router-flux": "^4.0.0-beta.28",
     "react-native-scrollable-tab-view": "^0.8.0",
     "react-native-vector-icons": "^4.5.0"

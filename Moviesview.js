@@ -19,7 +19,7 @@ var {height}=Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
  import SideBarMenu from './SideBarMenu.js'
 
-
+import {Router,Scene,Stack,Actions} from 'react-native-router-flux'
 import Nowplaying from './Movie_tabs/Nowplaying.js'
 import Topboxoffice from './Movie_tabs/Topboxoffice.js'
 import Anticipated from './Movie_tabs/Anticipated.js'
@@ -69,7 +69,7 @@ export default class Demo extends Component{
                     </View>
                     <View style={{flex:0.05}}></View>
                     <View style={{flex:0.05}}>
-                      <Icon name='search' style={{color:'white', fontSize:20,marginTop:height*0.029}}/>
+                      <Icon name='search' style={{color:'white', fontSize:20,marginTop:height*0.029}} onPress = { () => { Actions.Search()}}/>
                     </View>
                     <View style={{flex:0.05}}></View>
                   </View>
@@ -79,7 +79,7 @@ export default class Demo extends Component{
                           tabBarBackgroundColor="#333333"
                           tabBarActiveTextColor="#f7faff"
                           tabBarInactiveTextColor="#c1c1c1"
-                          tabBarTextStyle={{ fontFamily: 'Roboto', fontSize:width*0.0358 }}
+                          tabBarTextStyle={{ fontFamily: 'Roboto', fontSize:width*0.037 }}
                           tabBarUnderlineStyle={{ backgroundColor: '#3FC380' }}
                           renderTabBar={() => <ScrollableTabBar />}>
                                <Nowplaying tabLabel='NOW PLAYING' listflip={this.state.listflip} />
@@ -101,18 +101,3 @@ export default class Demo extends Component{
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-
-});

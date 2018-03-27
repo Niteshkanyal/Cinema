@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome'
-import {  View, TextInput,AsyncStorage,Text, Image, TouchableOpacity,ActivityIndicator,FlatList, Dimensions} from 'react-native'
+import {  View, TextInput,AsyncStorage,Text,TouchableOpacity,ActivityIndicator,FlatList, Dimensions} from 'react-native'
 import { Actions } from 'react-native-router-flux'
 var {width} = Dimensions.get('window');
 var {height}=Dimensions.get('window');
 const imgPath = "https://image.tmdb.org/t/p/w500/";
 import Detailpage from '../Detailpage.js'
+import Image from 'react-native-image-progress'
 
 export default class Ontheair extends Component {
       constructor(props){
@@ -47,7 +48,7 @@ render(){
 
 if(this.state.isLoading){
   return(
-    <View style={{flex: 1, padding: 20}}>
+    <View style={{flex: 1, marginTop:height*0.48}}>
       <ActivityIndicator/>
     </View>
   )
@@ -63,17 +64,16 @@ if(this.props.listflip)
          key={`${this.props.listflip?item => item.id+'d'.toString():item=>item.id+'s'}`}
         data={this.state.dataSource}
         renderItem={({item}) =>
+        <TouchableOpacity  onPress={()=>this.detail(item)}>
               <View style={{height:height*0.22,width:width*0.95,marginTop:width*0.025,marginLeft:width*0.026,backgroundColor:'white',flexDirection:'row',borderWidth:0.3,borderBottomColor:'gray',borderLeftColor:'white',borderTopColor:'white',borderRightColor:'white'}}>
                 <View style={{flex:0.3}}>
-                  <TouchableOpacity onPress={()=>this.detail(item)}>
-                    <Image source={{ uri: imgPath + item.poster_path }} style={{ width:width*0.25, height:height*0.2,resizeMode:'stretch'}} />
-                  </TouchableOpacity>
+                    <Image indicator={ActivityIndicator} source={{ uri: imgPath + item.poster_path }} style={{ width:width*0.25, height:height*0.2}} />
                 </View>
                 <View style={{flex:0.7,flexDirection:"column"}}>
                   <View style={{flex:0.1}}></View>
-                  <View style={{flex:0.1}}><Text style={{fontSize:width*0.03,fontWeight:'bold',color:'black',marginLeft:width*0.018}}>{new Date(item.release_date).getFullYear()}</Text></View>
+                  <View style={{flex:0.1}}><Text style={{fontSize:width*0.03,fontWeight:'bold',color:'black',marginLeft:width*0.018}}>{new Date(item.first_air_date).getFullYear()}</Text></View>
                   <View style={{flex:0.15,flexWrap:'wrap'}}>
-                    <Text style={{color:'black',fontSize:width*0.04,marginLeft:width*0.015}} numberOfLines={2}>{item.name}</Text>
+                    <Text style={{color:'black',fontSize:width*0.04,marginLeft:width*0.015}} numberOfLines={1}>{item.name}</Text>
                   </View>
                   <View style={{flex:0.3,flexDirection:'row'}}>
                     <View style={{flex:0.2}}>
@@ -92,6 +92,7 @@ if(this.props.listflip)
                   </View>
                 </View>
               </View>
+          </TouchableOpacity>
           }
       />
     </View>
@@ -106,10 +107,10 @@ if(this.props.listflip)
          key={`${this.props.listflip?item => item.id+'d'.toString():item=>item.id+'s'}`}
         data={this.state.dataSource}
         renderItem={({item}) =>
-              <View style={{height:height*0.33,width:width*0.3,marginTop:width*0.025,marginLeft:width*0.026,backgroundColor:'#d7d7d7',flexDirection:'column'}}>
+              <View style={{height:height*0.33,width:width*0.3,marginTop:width*0.02,marginLeft:width*0.026,backgroundColor:'#d7d7d7',flexDirection:'column',marginBottom:height*0.008}}>
                 <View style={{flex:0.8}}>
                   <TouchableOpacity onPress={()=>this.detail(item)}>
-                    <Image source={{ uri: imgPath + item.poster_path }} style={{ width:width*0.295, height:height*0.25,resizeMode:'stretch'}} />
+                    <Image indicator={ActivityIndicator} source={{ uri: imgPath + item.poster_path }} style={{ width:width*0.295, height:height*0.25}} />
                   </TouchableOpacity>
                 </View>
                 <View style={{flex:0.2,flexDirection:"row"}}>

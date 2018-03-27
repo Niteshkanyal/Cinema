@@ -6,9 +6,9 @@ import {
   View,
   DrawerLayoutAndroid,
   TouchableHighlight,
-  Dimensions,AsyncStorage,
+  Dimensions,
+  AsyncStorage,
   ActivityIndicator,
-  Image,
   ScrollView,
   FlatList,
   TouchableOpacity
@@ -27,20 +27,21 @@ const imgPath = "https://image.tmdb.org/t/p/w500/";
 import Info from './Tv_detail_tabs/Info.js'
 import Cast from './Tv_detail_tabs/Cast.js'
 import Reviews from './Tv_detail_tabs/Reviews.js'
+import Image from 'react-native-image-progress'
 
-export default class Tv_detail extends Component{
+export default class Popular_people extends Component{
   constructor() {
           super();
           this.openDrawer = this.openDrawer.bind(this);
           this.state = {
                isLoading: true,
                dataSource:[],
+               person_id:'',
          }
       }
 
 openDrawer() {
     this.drawer.openDrawer();
-    // this.drawer.closeDrawer();
 }
    async componentDidMount()
    {
@@ -64,6 +65,11 @@ openDrawer() {
               console.error(error);
             });
             // alert(JSON.stringify(this.state.dataSource))
+   }
+   callPeople = (fish,person_id)=>
+   {
+     // console.log(fish)
+      Actions.Popular_people_detail({fish:fish},{person_id:person_id});
    }
   render() {
     if(this.state.isLoading){
@@ -89,7 +95,7 @@ openDrawer() {
             <Text style={{color:'#f7faff',fontSize:width*0.05,marginLeft:width*0.2,marginTop:height*0.026}}>Popular People</Text>
           </View>
           <View>
-            <Icon name='search' style={{color:'#f7faff', fontSize:23,marginLeft:width*0.27,marginTop:height*0.028}}/>
+            <Icon name='search' style={{color:'#f7faff', fontSize:23,marginLeft:width*0.27,marginTop:height*0.028}} onPress = { () => { Actions.Search()}}/>
           </View>
         </View>
         <View style={{flex:0.9,flexDirection:'column'}}>
@@ -97,10 +103,10 @@ openDrawer() {
               numColumns={1}
               data={this.state.dataSource.results}
               keyExtractor={(x, i) => i}
-              renderItem={({item}) =>
-                <TouchableOpacity>
+              renderItem={({item,index}) =>
+                <TouchableOpacity onPress={()=>{this.callPeople(index,item.id)}}>
                     <View style={{height:height*0.17,flexDirection:'row',marginTop:height*0.02,}}>
-                         <Image source={{ uri: imgPath + item.profile_path }} style={{ width:100, height:100,marginLeft:width*0.036,borderRadius:100}} />
+                         <Image borderRadius={100} indicator={ActivityIndicator} source={{ uri: imgPath + item.profile_path }} style={{ width:100, height:100,marginLeft:width*0.036,borderRadius:100}} />
                          <Text style={{marginLeft:width*0.04,fontSize:15,fontWeight:'bold',color:"black",marginTop:height*0.056}}>{item.name}</Text>
                     </View>
                 </TouchableOpacity>

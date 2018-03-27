@@ -8,7 +8,6 @@ import {
   TouchableHighlight,
   Dimensions,AsyncStorage,
   ActivityIndicator,
-  Image,
   ScrollView,
   FlatList
 } from 'react-native';
@@ -19,6 +18,8 @@ var {width} = Dimensions.get('window');
 var {height}=Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
 const imgPath = "https://image.tmdb.org/t/p/w500/";
+import Image from 'react-native-image-progress'
+import ProgressBar from 'react-native-progress/Circle'
 
 
 import Info_detail from './detail_tab/Info_detail.js'
@@ -77,8 +78,8 @@ export default class Detailpage extends Component{
         <View style={{flex:0.55,flexDirection:'column',position:'relative'}}>
 
             <View style={{flex:0.6,position:'relative'}}>
-              <Image source={{ uri: imgPath + this.state.head.backdrop_path }} style={{ width:width, height:height*0.38,resizeMode:'stretch',position:'relative'}} />
-              <Icon name='arrow-left' style={{color:'white', fontSize:24,marginTop:height*0.01,marginLeft:width*0.03,position:'absolute'}} onPress={()=>Actions.popTo('Moviesview')}/>
+              <Image indicator={ActivityIndicator} source={{ uri: imgPath + this.state.head.backdrop_path }} style={{ width:width, height:height*0.38,position:'relative'}} />
+              <Icon name='arrow-left' style={{color:'white', fontSize:24,marginTop:height*0.01,marginLeft:width*0.03,position:'absolute'}} onPress={()=>Actions.pop()}/>
               <Icon name='home' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.7,position:'absolute'}}/>
               <Icon name='share-alt' style={{color:'white', fontSize:20,marginTop:height*0.014,marginLeft:width*0.86,position:'absolute'}}/>
               <Icon name='ellipsis-v' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.95,position:'absolute'}}/>
@@ -117,7 +118,7 @@ export default class Detailpage extends Component{
              </View>
 
            </View>
-           <Image source={{ uri: imgPath + this.state.dataSource.poster_path }} style={{ width:width*0.3, height:height*0.25,resizeMode:'stretch',position:'absolute',marginTop:height*0.259,marginLeft:width*0.036}} />
+           <Image indicator={ActivityIndicator} source={{ uri: imgPath + this.state.dataSource.poster_path }} style={{ width:width*0.3, height:height*0.25,position:'absolute',marginTop:height*0.259,marginLeft:width*0.036}} />
 
         </View>
         <View style={{flex:0.45}}>
@@ -126,7 +127,7 @@ export default class Detailpage extends Component{
                 tabBarBackgroundColor="#709060"
                 tabBarActiveTextColor="#f7faff"
                 tabBarInactiveTextColor="#aabda0"
-                tabBarTextStyle={{ fontFamily: 'Roboto', fontSize:width*0.0358 }}
+                tabBarTextStyle={{ fontFamily: 'Roboto', fontSize:width*0.037 }}
                 tabBarUnderlineStyle={{ backgroundColor: 'white' }}
                 renderTabBar={() => <ScrollableTabBar />}>
                      <Info_detail tabLabel='INFO' dataSource={this.state.dataSource}/>

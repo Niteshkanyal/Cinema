@@ -9,7 +9,6 @@ import {
   TouchableHighlight,
   Dimensions,
   FlatList,
-  Image,
   ActivityIndicator
 } from 'react-native';
 const imgPath = "https://image.tmdb.org/t/p/w500/";
@@ -17,6 +16,7 @@ import {Router,Scene,Stack} from 'react-native-router-flux'
 
 var {width} = Dimensions.get('window');
 var {height}=Dimensions.get('window');
+import Image from 'react-native-image-progress'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 
@@ -71,7 +71,7 @@ export default class Cast_detail extends Component{
           <View style={{flex:1,flexDirection:'row',marginTop:height*0.02,height:height*0.12}}>
               <View style={{flex:0.03}}></View>
               <View style={{flex:0.3,borderRadius:100}}>
-                   <Image source={{ uri: imgPath + item.profile_path }} style={{ width:80, height:78,borderRadius:100}} />
+                   <Image borderRadius={100} indicator={ActivityIndicator} source={{ uri: imgPath + item.profile_path }} style={{ width:80, height:78,borderRadius:100}} />
               </View>
               <View style={{flex:0.02}}></View>
               <View style={{flex:0.3}}><Text style={{color:'black',padding:height*0.01}}>{item.name}</Text></View>

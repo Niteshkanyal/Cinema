@@ -90,10 +90,10 @@ export default class Info extends Component{
                 </View>
               </View>
               <View style={{flex:0.2,flexDirection:'row'}}>
-                <View style={{flex:0.2}}>
+                <View style={{flex:0.25}}>
                   <Text style={{color:'black',fontWeight:'bold'}}>Created By: </Text>
                 </View>
-                <View style={{flex:0.8}}>
+                <View style={{flex:0.75}}>
                     <FlatList
                       numColumns={3}
                       data={this.props.dataSource.created_by}

@@ -10,7 +10,7 @@ import {
   Dimensions,
   ActivityIndicator,
   FlatList,
-  Image
+
 } from 'react-native';
 import {Router,Scene,Stack} from 'react-native-router-flux'
 
@@ -18,6 +18,7 @@ var {width} = Dimensions.get('window');
 var {height}=Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome'
 const imgPath = "https://image.tmdb.org/t/p/w500/";
+import Image from 'react-native-image-progress'
 
 
 export default class Reviews extends Component{
@@ -77,7 +78,7 @@ export default class Reviews extends Component{
                   <View style={{flex:0.3}}></View>
                 </View>
                 <View>
-                   <Image source={{ uri: imgPath + item.poster_path }} style={{marginLeft:width*0.05,height:height*0.3,width:width*0.9 ,resizeMode:'stretch'}} />
+                   <Image indicator={ActivityIndicator} source={{ uri: imgPath + item.poster_path }} style={{marginLeft:width*0.05,height:height*0.3,width:width*0.9 }} />
                 </View>
 
             </View>
@@ -88,17 +89,3 @@ export default class Reviews extends Component{
       );
     }
   }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-
-});
