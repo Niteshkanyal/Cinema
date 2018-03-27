@@ -48,7 +48,7 @@ render(){
 
 if(this.state.isLoading){
   return(
-    <View style={{flex: 1, marginTop:height*0.48}}>
+    <View style={{flex: 1, marginTop:height*0.34}}>
       <ActivityIndicator/>
     </View>
   )

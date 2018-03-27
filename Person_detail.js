@@ -21,9 +21,9 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 const imgPath = "https://image.tmdb.org/t/p/w500/";
 
 
-import Info from './Tv_detail_tabs/Info.js'
-import Cast from './Tv_detail_tabs/Cast.js'
-import Reviews from './Tv_detail_tabs/Reviews.js'
+import Info from './Person_tabs/Info.js'
+import Movies from './Person_tabs/Movies.js'
+import Tv from './Person_tabs/Tv_shows.js'
 
 export default class Tv_detail extends Component{
   state = {
@@ -31,14 +31,23 @@ export default class Tv_detail extends Component{
      isLoading: true,
      dataSource:[],
      dataImage:[],
+     head:[],
+     tail:[],
   }
+
+
 
    async componentDidMount()
    {
+
+     let response = await AsyncStorage.getItem('head');
+     let listOfTasks = await JSON.parse(response) || [];
+     this.setState({head:listOfTasks});
+
 //https://api.themoviedb.org/3/person/{person_id}?api_key=<<api_key>>&language=en-US
 //https://api.themoviedb.org/3/person/{person_id}/images?api_key=<<api_key>>
           console.log(`https://api.themoviedb.org/3/person/{person_id}/movie_credits?api_key=<<api_key>>&language=en-US`);
-          return fetch(`https://api.themoviedb.org/3/person/4457?api_key=ca7d5b4e1ef2579d75ffd62fd445e6ea&language=en-US`)
+          return fetch(`https://api.themoviedb.org/3/person/${this.state.head.id}?api_key=ca7d5b4e1ef2579d75ffd62fd445e6ea&language=en-US`)
             .then((response) => response.json())
             .then((responseJson) => {
 
@@ -56,23 +65,7 @@ export default class Tv_detail extends Component{
               console.error(error);
             });
 
-            return fetch(`https://api.themoviedb.org/3/person/4457/images?api_key=ca7d5b4e1ef2579d75ffd62fd445e6ea`)
-              .then((response) => response.json())
-              .then((responseJson) => {
 
-                this.setState({
-                  isLoading: false,
-                  dataImage: responseJson,
-
-                }, function(err, data){
-                      this.setState({isLoading:false});
-                      // alert(JSON.stringify(data))
-                });
-
-              })
-              .catch((error) =>{
-                console.error(error);
-              });
 
    }
   render() {
@@ -88,9 +81,9 @@ export default class Tv_detail extends Component{
         <View style={{flex:0.55,flexDirection:'column',position:'relative'}}>
 
             <View style={{flex:0.6,position:'relative'}}>
-              {/*<Image source={{ uri: imgPath + this.state.dataImage.profiles.file_path }} style={{ width:width, height:height*0.38,resizeMode:'stretch',position:'relative'}} />*/}
-              <Icon name='arrow-left' style={{color:'white', fontSize:24,marginTop:height*0.01,marginLeft:width*0.03,position:'absolute'}} />
-              <Icon name='home' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.84,position:'absolute'}}/>
+              <Image source={{ uri: imgPath + this.state.head.profile_path }} style={{ width:width, height:height*0.38,resizeMode:'stretch',position:'relative'}} />
+              <Icon name='arrow-left' style={{color:'white', fontSize:24,marginTop:height*0.01,marginLeft:width*0.03,position:'absolute'}} onPress={()=>Actions.pop()} />
+              <Icon name='home' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.84,position:'absolute'}} onPress={()=>Actions.popTo('Moviesview')} />
               <Icon name='ellipsis-v' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.95,position:'absolute'}}/>
             </View>
 
@@ -122,17 +115,17 @@ export default class Tv_detail extends Component{
         </View>
         <View style={{flex:0.45}}>
           <View style={{flex:2}}>
-            {/*  <ScrollableTabView
+           <ScrollableTabView
                 tabBarBackgroundColor="#a05868"
                 tabBarActiveTextColor="#f7faff"
                 tabBarInactiveTextColor="#bf8f9a"
                 tabBarTextStyle={{ fontFamily: 'Roboto', fontSize:width*0.0358 }}
                 tabBarUnderlineStyle={{ backgroundColor: 'white' }}
                 renderTabBar={() => <ScrollableTabBar />}>
-                     <Info tabLabel='INFO' dataSource={this.state.dataSource} />
-                      <Cast tabLabel='CAST' dataSource={this.state.dataSource} />
-                       <Reviews tabLabel='SEASONS' dataSource={this.state.dataSource}/>
-              </ScrollableTabView>*/}
+                     <Info tabLabel='INFO' head={this.state.head} />
+                      <Movies tabLabel='MOVIES'   head={this.state.head} />
+                      <Tv tabLabel='TV SHOWS' head={this.state.head} />
+              </ScrollableTabView>
           </View>
 
         </View>

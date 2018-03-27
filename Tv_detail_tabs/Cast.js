@@ -10,10 +10,11 @@ import {
   Dimensions,
   ActivityIndicator,
   FlatList,
+  AsyncStorage,TouchableOpacity
 
 } from 'react-native';
 const imgPath = "https://image.tmdb.org/t/p/w500/";
-import {Router,Scene,Stack} from 'react-native-router-flux'
+import {Router,Scene,Stack,Actions} from 'react-native-router-flux'
 
 var {width} = Dimensions.get('window');
 var {height}=Dimensions.get('window');
@@ -26,6 +27,11 @@ export default class Cast extends Component{
      cast_tv:[],
       isLoading: true,
 
+  }
+  person_dt =(item)=>
+  {
+    AsyncStorage.setItem('head',JSON.stringify(item))
+    Actions.Person_detail();
   }
 
   async componentDidMount()
@@ -56,7 +62,7 @@ export default class Cast extends Component{
   render() {
     if(this.state.isLoading){
       return(
-        <View style={{flex: 1,marginTop:20}}>
+        <View style={{flex: 1,marginTop:100}}>
           <ActivityIndicator/>
         </View>
       )
@@ -68,17 +74,19 @@ export default class Cast extends Component{
         data={this.state.cast_tv.cast}
         keyExtractor={(x, i) => i}
         renderItem={({item}) =>
-          <View style={{flex:1,flexDirection:'row',marginTop:height*0.02,height:height*0.12}}>
+        <TouchableOpacity onPress={()=>this.person_dt(item)}>
+          <View style={{flex:1,flexDirection:'row',marginTop:height*0.02,height:height*0.125}}>
               <View style={{flex:0.03}}></View>
               <View style={{flex:0.3,borderRadius:100}}>
                    <Image Image borderRadius={100} indicator={ActivityIndicator} source={{ uri: imgPath + item.profile_path }} style={{ width:80, height:78,borderRadius:100}} />
               </View>
               <View style={{flex:0.02}}></View>
-              <View style={{flex:0.3}}><Text style={{color:'black',padding:height*0.01}}>{item.name}</Text></View>
+              <View style={{flex:0.3}}><Text style={{color:'black',fontWeight:'bold',padding:height*0.01}}>{item.name}</Text></View>
               <View style={{flex:0.05}}></View>
-              <View style={{flex:0.25}}><Text style={{color:'black',padding:height*0.01}}>{item.character}</Text></View>
+              <View style={{flex:0.25}}><Text style={{fontStyle:'italic',padding:height*0.01}}>as {item.character}</Text></View>
               <View style={{flex:0.05}}></View>
           </View>
+        </TouchableOpacity>
 
           }
       />

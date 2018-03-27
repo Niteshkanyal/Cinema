@@ -65,7 +65,7 @@ export default class Popular_people_detail extends Component{
   render() {
     if(this.state.isLoading){
       return(
-        <View style={{flex: 1, padding: 20}}>
+        <View style={{flex: 1,marginTop:height*0.44}}>
           <ActivityIndicator/>
         </View>
       )
@@ -77,7 +77,7 @@ export default class Popular_people_detail extends Component{
             <View style={{flex:0.6,position:'relative'}}>
               <Image indicator={ActivityIndicator} source={{ uri: imgPath + this.state.dataSource_one.backdrop_path}} style={{ width:width, height:height*0.38,position:'relative'}} />
               <Icon name='arrow-left' style={{color:'white', fontSize:24,marginTop:height*0.01,marginLeft:width*0.03,position:'absolute'}} onPress={()=>Actions.pop()}/>
-              <Icon name='home' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.8,position:'absolute'}} onPress={()=>Actions.popTo('Moviesview')}/>
+              <Icon name='home' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.8,position:'absolute'}} onPress={()=>Actions.popTo('Popular_people')}/>
               <Icon name='ellipsis-v' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.95,position:'absolute'}}/>
             </View>
 

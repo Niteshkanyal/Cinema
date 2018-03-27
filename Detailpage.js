@@ -68,7 +68,7 @@ export default class Detailpage extends Component{
   render() {
     if(this.state.isLoading){
       return(
-        <View style={{flex: 1, padding: 20}}>
+        <View style={{flex: 1, marginTop:height*0.48}}>
           <ActivityIndicator/>
         </View>
       )
@@ -80,8 +80,8 @@ export default class Detailpage extends Component{
             <View style={{flex:0.6,position:'relative'}}>
               <Image indicator={ActivityIndicator} source={{ uri: imgPath + this.state.head.backdrop_path }} style={{ width:width, height:height*0.38,position:'relative'}} />
               <Icon name='arrow-left' style={{color:'white', fontSize:24,marginTop:height*0.01,marginLeft:width*0.03,position:'absolute'}} onPress={()=>Actions.pop()}/>
-              <Icon name='home' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.7,position:'absolute'}}/>
-              <Icon name='share-alt' style={{color:'white', fontSize:20,marginTop:height*0.014,marginLeft:width*0.86,position:'absolute'}}/>
+              <Icon name='home' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.7,position:'absolute'}} onPress={()=>Actions.popTo('Moviesview')}/>
+              <Icon name='share-alt' style={{color:'white', fontSize:20,marginTop:height*0.014,marginLeft:width*0.824,position:'absolute'}}/>
               <Icon name='ellipsis-v' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.95,position:'absolute'}}/>
             </View>
 
@@ -131,7 +131,7 @@ export default class Detailpage extends Component{
                 tabBarUnderlineStyle={{ backgroundColor: 'white' }}
                 renderTabBar={() => <ScrollableTabBar />}>
                      <Info_detail tabLabel='INFO' dataSource={this.state.dataSource}/>
-                      <Cast_detail tabLabel='CAST' dataSource={this.state.dataSource} />
+                      <Cast_detail tabLabel='CAST' dataSource={this.state.dataSource}  head={this.state.head}/>
                        <Reviews_detail tabLabel='REVIEWS' dataSource={this.state.dataSource} />
               </ScrollableTabView>
           </View>

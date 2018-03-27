@@ -53,7 +53,7 @@ export default class Reviews_detail extends Component{
   render() {
     if(this.state.isLoading){
       return(
-        <View style={{flex: 1, padding: 20}}>
+        <View style={{flex: 1, marginTop:100}}>
           <ActivityIndicator/>
         </View>
       )
@@ -65,7 +65,7 @@ export default class Reviews_detail extends Component{
         data={this.state.reviews_movie.results}
         keyExtractor={(x, i) => i}
         renderItem={({item}) =>
-          <View style={{flexDirection:'column',marginTop:height*0.01,padding:width*0.05}}>
+          <View style={{flexDirection:'column',marginTop:height*0.01,padding:width*0.03}}>
             <Text style={{fontSize:15,fontWeight:'bold',padding:5}}>{item.author?item.author:this.state.noitem}</Text>
             <Text style={{padding:5}}>{item.content}</Text>
           </View>

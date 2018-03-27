@@ -58,15 +58,15 @@ export default class Search extends Component {
 
                                     <View style={{ flexDirection: 'row' ,backgroundColor:"#333435"}}>
 
-                                          <View style={{ margin: 10, flex: 0.15 }}>
+                                          <View style={{ margin: 10, flex: 0.1 }}>
                                                 <TouchableOpacity onPress={() => { Actions.pop() }}  >
                                                       <Icon name="arrow-left" size={24} color="#fff" style={{ padding: 5 }} />
                                                 </TouchableOpacity>
                                           </View >
-                                          <View style={{ margin: 10, flex: 0.08 }}>
+                                          <View style={{ margin: 10, flex: 0.1 }}>
                                                 <Icon name="search" size={20} color="#fff" style={{ padding: 5 }} />
                                           </View>
-                                          <View style={{ marginLeft: 0, marginRight: 0, marginBottom: 10, flex: 0.6 }}>
+                                          <View style={{ marginLeft: 0, marginRight: 0, marginBottom: 10, flex: 0.7 }}>
                                               <KeyboardAwareScrollView>
                                                 <TextInput
                                                 placeholder={"Search " + "..."}

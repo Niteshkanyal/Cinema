@@ -64,6 +64,7 @@ export default class App extends Component{
                   component={Person_detail}
                   title="Profile"
                   key="Person_detail"
+
                   />
                   <Scene hideNavBar hideTabBar
                   component={Popular_people}
