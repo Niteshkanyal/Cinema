@@ -10,7 +10,8 @@ import {
   ActivityIndicator,
   Image,
   ScrollView,
-  FlatList
+  FlatList,
+  Modal
 } from 'react-native';
 import ScrollableTabView ,{ScrollableTabBar}from 'react-native-scrollable-tab-view'
 import {Router,Actions,Scene,Stack} from 'react-native-router-flux'
@@ -33,8 +34,12 @@ export default class Tv_detail extends Component{
      dataImage:[],
      head:[],
      tail:[],
+     visible: false,
+     modalVisible:false,
   }
-
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
+  }
 
 
    async componentDidMount()
@@ -81,10 +86,35 @@ export default class Tv_detail extends Component{
         <View style={{flex:0.55,flexDirection:'column',position:'relative'}}>
 
             <View style={{flex:0.6,position:'relative'}}>
-              <Image source={{ uri: imgPath + this.state.head.profile_path }} style={{ width:width, height:height*0.38,resizeMode:'stretch',position:'relative'}} />
+              <Modal
+
+                backdrop={true}
+                 overlayColor={'rgba(255, 255, 255, .25)'}
+                onBackdropPress={() => this.setState({ modalVisible: false })}
+                transparent={true}
+                visible={this.state.modalVisible}
+                onRequestClose={() => {
+                   this.setModalVisible(!this.state.modalVisible);
+                 }}>
+                 <View  blurType='light' style={styles.modalContent}  blurType='light'>
+                    <View style={{flex:0.11,flexDirection:'column',borderRadius:20,padding:3}}>
+                         <Text style={{color:'black',fontSize:width*0.04,marginLeft:width*0.02,marginTop:height*0.018}}   onPress={() => Linking.openURL('http://googleplaystore.com')}>Google Play Store</Text>
+                          <Text style={{color:'black',fontSize:width*0.04,marginLeft:width*0.02,marginTop:height*0.028}}   onPress={() => Linking.openURL('http://themoviedb.org')}>View on Tmdb</Text>
+                           <Text style={{color:'black',fontSize:width*0.04,marginLeft:width*0.02,marginTop:height*0.028}}   onPress={() => Linking.openURL('http://imdb.com')}>View on Imdb</Text>
+                            <Text style={{color:'black',fontSize:width*0.04,marginLeft:width*0.02,marginTop:height*0.028}}   onPress={() => Linking.openURL('http://facebook.com')}>Join the Discussion</Text>
+                    </View>
+                    <View style={{flex:0.05}}>
+                       <TouchableHighlight
+                         onPress={() => {this.setModalVisible(!this.state.modalVisible);}}>
+                        <Text style={{color:'black',fontSize:width*0.043,marginTop:height*0.02,marginLeft:width*0.02}}>Cancel</Text>
+                       </TouchableHighlight>
+                    </View>
+                 </View>
+               </Modal>
+              <Image source={{ uri: imgPath + this.state.head.profile_path }} style={{ width:width, height:height*0.38,position:'relative'}} />
               <Icon name='arrow-left' style={{color:'white', fontSize:24,marginTop:height*0.01,marginLeft:width*0.03,position:'absolute'}} onPress={()=>Actions.pop()} />
               <Icon name='home' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.84,position:'absolute'}} onPress={()=>Actions.popTo('Moviesview')} />
-              <Icon name='ellipsis-v' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.95,position:'absolute'}}/>
+              <Icon name='ellipsis-v' style={{color:'white', fontSize:25,marginTop:height*0.01,marginLeft:width*0.95,position:'absolute'}}  onPress={() => {  this.setModalVisible(true) }}/>
             </View>
 
             <View style={{flex:0.4,backgroundColor:'#505830',flexDirection:'row',position:'relative'}}>
@@ -134,3 +164,15 @@ export default class Tv_detail extends Component{
     );
   }
 }
+const styles = StyleSheet.create({
+
+  modalContent: {
+  position:'absolute',
+  marginLeft:width*0.52,
+  flexDirection:'column',
+  flex:0.54,
+  backgroundColor:'#f7faff',
+  borderColor: "rgba(2, 4, 33, 0.4)"
+},
+
+});

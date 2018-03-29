@@ -15,9 +15,12 @@
     "react-native-image-progress": "^1.1.0",
     "react-native-image-slider": "^2.0.3",
     "react-native-keyboard-aware-scroll-view": "^0.5.0",
+    "react-native-modal": "^5.4.0",
+    "react-native-popup-menu": "^0.12.3",
     "react-native-progress": "^3.4.0",
     "react-native-router-flux": "^4.0.0-beta.28",
     "react-native-scrollable-tab-view": "^0.8.0",
+    "react-native-share": "^1.0.27",
     "react-native-vector-icons": "^4.5.0"
   },
   "devDependencies": {

@@ -12,19 +12,19 @@ import {
   ScrollView,
   FlatList,
   TouchableOpacity,
-  Modal
+
 
 } from 'react-native';
 import ScrollableTabView ,{ScrollableTabBar}from 'react-native-scrollable-tab-view'
 import {Router,Actions,Scene,Stack} from 'react-native-router-flux'
-
+import Modal from 'react-native-modal'
 var {width} = Dimensions.get('window');
 var {height}=Dimensions.get('window');
  import SideBarMenu from './SideBarMenu.js'
 import Icon from 'react-native-vector-icons/FontAwesome'
 const imgPath = "https://image.tmdb.org/t/p/w500/";
 // import Modal from 'react-native-animated-modal'
-
+import {BlurView} from 'react-native-blur'
 
 import Info from './Tv_detail_tabs/Info.js'
 import Cast from './Tv_detail_tabs/Cast.js'
@@ -191,30 +191,33 @@ openDrawer() {
           <View>
             <Text style={{color:'#f7faff',fontSize:width*0.05,marginLeft:width*0.2,marginTop:height*0.026}}>Discover</Text>
           </View>
-          <View>
+          {/*<View>
             <Icon name='filter' style={{color:'#f7faff', fontSize:23,marginLeft:width*0.2,marginTop:height*0.028}}  onPress={() => {  this.setModalVisible(true) }}/>
 
           </View>
           <View>
             <Icon name='sort' style={{color:'#f7faff', fontSize:23,marginLeft:width*0.05,marginTop:height*0.028}}/>
-          </View>
+          </View>*/}
           <View>
-            <Icon name={this.state.listflip?'table':'th-list'}  style={{color:'#f7faff', fontSize:23,marginLeft:width*0.06,marginTop:height*0.028}} onPress={()=>{this.flipit()}}/>
+            <Icon name={this.state.listflip?'table':'th-list'}  style={{color:'#f7faff', fontSize:23,marginLeft:width*0.4,marginTop:height*0.028}} onPress={()=>{this.flipit()}}/>
           </View>
 
         </View>
 
 
         <Modal
-          animationType="fade"
-          animationIn="slideInLeft"
-          animationOut="slideOutRight"
-           transparent={true}
-           visible={this.state.modalVisible}
-           onRequestClose={() => {
+          // animationIn="slideInLeft"
+          // animationOut="slideOutRight"
+          // backgroundColor='rgba(2, 4, 33, 0.0)'
+          backdrop={true}
+           overlayColor={'rgba(255, 255, 255, .25)'}
+          onBackdropPress={() => this.setState({ modalVisible: false })}
+          transparent={true}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
              this.setModalVisible(!this.state.modalVisible);
            }}>
-           <View style={styles.modalContent}  blurType='light'>
+           <View  blurType='light' style={styles.modalContent}  blurType='light'>
               <View style={{flex:0.11,flexDirection:'row',backgroundColor:'#333333'}}>
                  <View>
                    <Text style={{color:'#f7faff',fontSize:width*0.05,marginLeft:width*0.02,marginTop:height*0.028}}>Filters</Text>
@@ -223,16 +226,16 @@ openDrawer() {
                    <Text style={{color:'#f7faff',fontSize:width*0.05,marginLeft:width*0.45,marginTop:height*0.028}}>Apply</Text>
                  </View>
 
-           </View>
-            <View style={{flex:0.08,backgroundColor:'#d7d7d7'}}><Text style={{color:'black',padding:5,fontSize:17}}>Your Range</Text></View>
-            <View style={{flex:0.11}}></View>
-            <View style={{flex:0.08,backgroundColor:'#d7d7d7'}}><Text style={{color:'black',padding:5,fontSize:17}}>Genres</Text></View>
-            <View style={{flex:0.11}}></View>
+              </View>
+              <View style={{flex:0.08,backgroundColor:'#d7d7d7'}}><Text style={{color:'black',padding:5,fontSize:17}}>Your Range</Text></View>
+              <View style={{flex:0.11}}></View>
+              <View style={{flex:0.08,backgroundColor:'#d7d7d7'}}><Text style={{color:'black',padding:5,fontSize:17}}>Genres</Text></View>
+              <View style={{flex:0.11}}></View>
 
-               <TouchableHighlight
-                 onPress={() => {this.setModalVisible(!this.state.modalVisible);}}>
-                 <Icon name='times' style={{color:'red', fontSize:23,marginLeft:width*0.06,marginTop:height*0.028}}/>
-               </TouchableHighlight>
+                 <TouchableHighlight
+                   onPress={() => {this.setModalVisible(!this.state.modalVisible);}}>
+                   <Icon name='times' style={{color:'red', fontSize:23,marginLeft:width*0.06,marginTop:height*0.028}}/>
+                 </TouchableHighlight>
            </View>
          </Modal>
 
@@ -272,7 +275,6 @@ const styles = StyleSheet.create({
     //backgroundColor: '#F5FCFF',
   },
   modalContent: {
-  marginTop:0,
   marginLeft:width*0.2,
   flexDirection:'column',
   flex:1,

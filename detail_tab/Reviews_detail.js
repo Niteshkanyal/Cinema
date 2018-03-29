@@ -66,8 +66,8 @@ export default class Reviews_detail extends Component{
         keyExtractor={(x, i) => i}
         renderItem={({item}) =>
           <View style={{flexDirection:'column',marginTop:height*0.01,padding:width*0.03}}>
-            <Text style={{fontSize:15,fontWeight:'bold',padding:5}}>{item.author?item.author:this.state.noitem}</Text>
-            <Text style={{padding:5}}>{item.content}</Text>
+            <Text style={{fontSize:15,fontWeight:'bold',padding:5}}>{!item.author?this.state.noitem:item.author}</Text>
+            <Text style={{padding:5}}>{!item.content?'':item.content}</Text>
           </View>
 
           }

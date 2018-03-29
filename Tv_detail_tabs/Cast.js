@@ -75,9 +75,9 @@ export default class Cast extends Component{
         keyExtractor={(x, i) => i}
         renderItem={({item}) =>
         <TouchableOpacity onPress={()=>this.person_dt(item)}>
-          <View style={{flex:1,flexDirection:'row',marginTop:height*0.02,height:height*0.125}}>
+          <View style={{flex:1,flexDirection:'row',marginTop:height*0.024,height:height*0.132,borderWidth:0.3,borderBottomColor:'gray',borderLeftColor:'white',borderTopColor:'white',borderRightColor:'white',backgroundColor:'white'}}>
               <View style={{flex:0.03}}></View>
-              <View style={{flex:0.3,borderRadius:100}}>
+              <View style={{flex:0.3,borderRadius:100,marginTop:width*0.01}}>
                    <Image Image borderRadius={100} indicator={ActivityIndicator} source={{ uri: imgPath + item.profile_path }} style={{ width:80, height:78,borderRadius:100}} />
               </View>
               <View style={{flex:0.02}}></View>
